@@ -49,9 +49,15 @@
   <!-- Fonts Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -64,8 +70,9 @@
 </head>
 
 <body>
-  <canvas id="canvas-bg"></canvas>
-  <div class="overlay-dark"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <canvas id="canvas-bg" aria-hidden="true"></canvas>
+  <div class="overlay-dark" aria-hidden="true"></div>
 
   <!-- Navigation with mobile hamburger -->
   <nav class="navbar">
@@ -82,15 +89,17 @@
         </div>
         <div class="kali-bottom">
           <span class="kali-bottom-prompt">└──$</span>
-          <span class="kali-command" style="font-weight: bold; font-size: 15px;"> problems.welcome<span class="kali-cursor" style="font-weight: bold;">  -&sc; solutions.ready 💻</span> <span
+          <span class="kali-command" style="font-weight: bold; font-size: 15px;"> problems.welcome<span
+              class="kali-cursor" style="font-weight: bold;"> -&sc; solutions.ready 💻</span> <span
               class="kali-cursor"></span></span>
 
         </div>
       </div>
 
-      <div class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" aria-label="Main navigation menu. Opens and closes the navigation links."
+        aria-expanded="false">
         <span></span><span></span><span></span>
-      </div>
+      </button>
       <div class="nav-links" id="nav-links">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#skills"><i class="fas fa-microchip"></i> Skills</a>
@@ -102,7 +111,7 @@
     </div>
   </nav>
 
-  <main class="container" id="home">
+  <main class="container" id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <div class="hero-wrapper">
       <div class="hero-content">
@@ -123,7 +132,7 @@
       <div class="hero-image">
         <div class="avatar-frame">
           <div class="avatar-icon">
-            <img src="assets/my-profile.png" alt="Profile Image" />
+            <img src="assets/my-profile.webp" alt="Abanoub Youssef - Software Engineer Profile Picture" />
           </div>
         </div>
       </div>
@@ -387,7 +396,7 @@
         <div class="exp-card">
 
           <div class="company-logo">
-            <img src="assets/Gila.png" alt="Gila logo">
+            <img src="assets/Gila.webp" alt="Gila Al-Tawakol Electric company logo">
           </div>
 
           <div class="exp-details">
@@ -433,7 +442,7 @@
         <div class="exp-card">
 
           <div class="company-logo">
-            <img src="assets/scandiweb.png" alt="Scandiweb logo">
+            <img src="assets/scandiweb.webp" alt="Scandiweb logo">
           </div>
 
           <div class="exp-details">
@@ -559,7 +568,7 @@
       <div class="exp-card">
 
         <div class="company-logo">
-          <img src="assets/fresh.png" alt="Fresh Electric company logo">
+          <img src="assets/fresh.webp" alt="Fresh Electric company logo">
         </div>
 
         <div class="exp-details">
@@ -607,7 +616,7 @@
         <!-- Gila Al-Tawakol Electric -->
         <div class="project-card">
 
-          <img src="assets/Gila-ecommerce.png" alt="Gila Al-Tawakol Electric" width="250">
+          <img src="assets/Gila-ecommerce.webp" alt="Gila Al-Tawakol Electric" width="250">
 
           <div class="project-title">
             Gila Al-Tawakol Electric <br> Retail E-commerce
@@ -723,8 +732,9 @@
           <!-- Author Row -->
           <div class="row" style="display:flex; align-items:center; gap:10px; margin-top:10px;">
 
-            <img src="assets/edvards.png" alt="edwards profile"
-              style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+            <img src="assets/edvards.png" alt="Profile photo of Edwards Jansons, QA Engineer at Scandiweb" width="100"
+              height="100" style="border-radius:50%; object-fit:cover;">
+
 
             <div style="display:flex; flex-direction:column; line-height:1.2;">
 
@@ -755,8 +765,8 @@
           <!-- Author Row -->
           <div style="display:flex; align-items:center; gap:10px; margin-top:10px;">
 
-            <img src="assets/Mohamed.png" alt="Mohamed Idris"
-              style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+            <img src="assets/Mohamed.png" alt="Profile photo of Mohamed Idris, Software Engineer" width="100"
+              height="100" style="border-radius:50%; object-fit:cover;">
 
             <div style="display:flex; flex-direction:column; line-height:1.2;">
 
@@ -832,7 +842,7 @@
 
             <i class="fas fa-file-alt" style="color:#0ea5e9;"></i>
 
-            <a href="files/Abanoub-Youssef-CV.pdf" download>
+            <a href="files/Abanoub-Youssef-CV.pdf" download aria-label="Download Abanoub Youssef's CV as PDF (approximately 200KB)">
               <span>Download CV</span>
             </a>
 
@@ -845,10 +855,12 @@
     </section>
 
     <div class="social-icons-group">
-      <a href="https://github.com/AbanoubYoussef-4" class="social-circle"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/abyossef/" class="social-circle"><i class="fab fa-linkedin-in"
-          style="color:#0077B5;"></i></a>
-      <a href="https://www.instagram.com/abyossef99" target="_blank" class="social-circle">
+      <a href="https://github.com/AbanoubYoussef-4" class="social-circle"
+        aria-label="Visit Abanoub Youssef's GitHub profile to see code repositories" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/abyossef/" class="social-circle" aria-label="LinkedIn Profile" rel="noopener noreferrer" target="_blank"><i
+          class="fab fa-linkedin-in" style="color:#0077B5;"></i></a>
+      <a href="https://www.instagram.com/abyossef99" target="_blank" class="social-circle"
+        aria-label="Instagram Profile" rel="noopener noreferrer" target="_blank">
 
         <i class="fab fa-instagram" style="color:#E4405F;"></i>
 
@@ -863,7 +875,7 @@
     </footer>
   </main>
 
-  <script src="scripts.js"></script>
+  <script src="scripts.js" defer></script>
 </body>
 
 </html>

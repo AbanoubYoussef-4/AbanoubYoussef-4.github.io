@@ -1,7 +1,11 @@
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.avatar-frame, .skill-badge, .social-circle, .contact-item {
+  will-change: transform;
 }
 
 /* Canvas animated background */
@@ -29,7 +33,7 @@
 
 body {
   color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
   background: transparent;
@@ -68,7 +72,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -80,6 +83,21 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 } */
+ .skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--neon);
+  color: #000;
+  padding: 8px;
+  z-index: 999;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
 .logo {
   display: flex;
   flex-direction: column;
@@ -186,10 +204,10 @@ body {
 
 .hamburger span {
   width: 25px;
-  height: 3px;
+  height: 4px;
   background: var(--neon);
   transition: 0.3s;
-  border-radius: 3px;
+  border-radius: 3px solid black;
 }
 
 .container {
@@ -275,7 +293,7 @@ body {
 .hero-name {
   font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 800;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
   background: linear-gradient(135deg, #FFFFFF 70%, var(--neon));
   background-clip: text;
   -webkit-background-clip: text;
@@ -324,7 +342,7 @@ body {
 .section-title {
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
   margin-bottom: 2rem;
   margin-top: 2rem;
   border-left: 4px solid var(--neon);
@@ -780,16 +798,6 @@ body {
   color: #0A0A0A;
 }
 
-
-.edu-contact {
-  border-radius: 28px;
-  padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
 .edu-box, .contact-box {
   flex: 1;
 }
@@ -822,11 +830,12 @@ footer {
   
   .hamburger {
     display: flex;
+    background-color: #000;
   }
   
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 120px;
     left: 0;
     width: 100%;
     background: rgba(10, 10, 10, 0.95);
@@ -885,7 +894,6 @@ footer {
   }
   
   .contact-item {
-    flex-wrap: wrap;
     text-align: center;
   }
 
