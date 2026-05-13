@@ -8,6 +8,10 @@
   will-change: transform;
 }
 
+html {
+  scroll-padding-top: 100px; 
+}
+
 /* Canvas animated background */
 #canvas-bg {
   position: fixed;
@@ -822,7 +826,11 @@ footer {
 }
  
 /* Responsive Design */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 150px;
+  }
+
   .hero-wrapper {
     flex-direction: column-reverse;
     text-align: center;
