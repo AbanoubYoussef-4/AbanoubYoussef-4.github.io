@@ -675,8 +675,16 @@ body {
   flex-wrap: wrap;
 }
 
+.edu-meta span {
+  display: flex;
+  align-items: baseline;
+}
+
 .edu-meta i {
-  margin-right: 6px;
+  flex-shrink: 0;
+  width: 1.1em;
+  text-align: center;
+  margin-right: 8px;
   color: var(--neon);
 }
 
@@ -688,15 +696,24 @@ body {
 
 .edu-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   color: #E0E0E0;
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .edu-item i {
+  flex-shrink: 0;
   width: 28px;
+  margin-top: 0.3em;
+  text-align: center;
   color: var(--neon);
+}
+
+.edu-item span {
+  flex: 1;
+  min-width: 0;
 }
 
 /* CONTACT SECTION */
